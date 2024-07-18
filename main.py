@@ -1,5 +1,7 @@
+from abc import ABC, abstractmethod
 import json
 import re
+
 class CollegeManagement:
     def __init__(self,CollegeName,City,ContactNumber):
         self.__CollegeName = CollegeName
@@ -137,6 +139,21 @@ class Department:
                         
 
 
+class Classroom:
+    def __init__(self, ClassId, Section, DepartmentId):
+        self.ClassId = ClassId
+        self.Section = Section
+        self.DepartmentId = DepartmentId
+
+    def ClassroomDetails(self):
+        print("Class ID: ", self.ClassId)
+        print("Section: ", self.Section)
+        print("Department ID: ", self.DepartmentId)
+
+    def IsOccupied(self):
+        print("This method tells whether the classroom is occupied or not")
+
+
 
 class Student:
     num_of_student = 0
@@ -241,6 +258,89 @@ class Student:
 
         else:
             print("The student is present")
+
+
+
+class UGStudent(Student):
+    def __init__(self, StudentId, StudentName, Gender, Year, ClassId):
+        super().__init__(StudentId, StudentName, Gender, Year, ClassId)
+
+
+
+
+
+
+class PGStudent(Student):
+    def __init__(self, StudentId, StudentName, Gender, Year, ClassId):
+        super().__init__(StudentId, StudentName, Gender, Year, ClassId)
+
+
+
+
+
+# Abstraction
+# abstractmethod Abstract Base Class
+class Staff(ABC):
+    StaffId_val = 0
+    def __init__(self,StaffId,StaffName,Salary):
+        Staff.StaffId_val += 1
+        self.__StaffId = Staff.StaffId_val
+        self.StaffName = StaffName
+        self.Salary = Salary
+
+    def get_StaffId(self):
+        return self.__StaffId
+    def get_DepartmentId(self):
+        return self.__DepartmentId
+    
+    @abstractmethod
+    def StaffDetails(self):
+        pass
+        
+        
+
+
+class TeachingStaff(Staff):
+    def __init__(self, StaffId, StaffName, DepartmentId, Salary):
+        super().__init__(StaffId, StaffName,Salary)
+        self._DepartmentId = DepartmentId
+
+    def StaffDetails(self):
+        print("Staff ID: ", self.get_StaffId())
+        print("Staff Name: ", self.StaffName)
+        print("Department ID: ", self.get_DepartmentId())
+        print("Salary : ", self.Salary)
+
+
+
+class NonTeachingStaff(Staff):
+    def __init__(self, StaffId, StaffName, Salary, Role):
+        super().__init__(StaffId, StaffName,Salary)
+        self._Role = Role
+
+
+    def StaffDetails(self):
+        print("Staff ID: ", self.get_StaffId())
+        print("Staff Name: ", self.StaffName)
+        print("Role: ", self._Role)
+        print("Salary : ", self.Salary)
+
+
+class Canteen:
+    def __init__(self, InchargeId, ItemsList, AvailableList):
+        self.InchargedId = InchargeId
+        self.ItemsList = ItemsList
+        self.AvailableList = AvailableList
+
+    def ShowItems(self):
+        print("Items which are present in the canteen: ", self.ItemsList)
+
+    def Buy(self,Item):
+        if Item in self.AvailableList:
+            print(f"Bought {Item}.")
+        else:
+            print(f"{Item} is not available.")
+
 
 
 # new_college = CollegeManagement("Helwan University", "Cairo", '01235485')
