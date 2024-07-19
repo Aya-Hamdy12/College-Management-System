@@ -1,0 +1,5 @@
+DepartmentId: 111DepartmentName: CSHead of the department name: Amr GhonimTotalStaffs: 5TotalStudents: 120DepartmentId: 222
+DepartmentName: IS
+Head of the department name: Osama
+TotalStaffs: 8
+TotalStudents: 140
