@@ -1,8 +1,3 @@
-College Name: Cairo University
-City: Cairo
-Contact Number: 87654321
--------------------------------------------
-College Name: Helwan University
-City: Cairo
-Contact Number: 01235485
--------------------------------------------
+1,Helwan University,Helwan,526325
+1,Cairo University,Cairo,456321
+2,AIN Shams,Giza,85964

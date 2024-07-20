@@ -1,0 +1,4 @@
+CollegeID,DepartmentID,StudentID,StudentName,Gende,Year,PayFees
+1,4,1,Aya Hamdy,Female,2022,y
+1,2,2,Yassmin Kamal,Female,2021,n
+2,4,3,Ali,male,2020,y
