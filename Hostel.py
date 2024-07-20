@@ -14,7 +14,7 @@ class Hostel(ABC):
   def HostelDetails(self):
     print("Student ID: ", self.student_id)
     print("Block Number: ", self.BlockNumber)
-    print("Room Number: ", self.RoomNumber)
+    # print("Room Number: ", self.RoomNumber)
 
   @abstractmethod
   def CheckIn(self):
@@ -52,8 +52,8 @@ class GirlsHostel(Hostel):
       print("Checked Out")
 
 class BoysHostel(Hostel):
-  def __init__(self, student_id, BlockNumber, RoomNumber):
-    super().__init__(student_id, BlockNumber, RoomNumber)
+  def __init__(self, student_id, BlockNumber):
+    super().__init__(student_id, BlockNumber)
 
   def CheckIn(self):
     if self.Checked == True:

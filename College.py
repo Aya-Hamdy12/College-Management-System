@@ -1,7 +1,14 @@
 import json
 import re
 from abc import ABC, abstractmethod
-
+from Department import Department
+from Student import UGStudent
+from Student import PGStudent
+from Staff import *
+from ClassRoom import Classroom
+from Hostel import *
+from Auditorium import *
+from library import *
 
 class CollegeManagement:
     __CollegeID = 0
