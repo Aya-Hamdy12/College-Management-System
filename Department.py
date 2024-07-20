@@ -58,7 +58,7 @@ class Department(ABC):
     def DepartmentDetails(self, Department_ID):
         try:
             with open("DepartmentFile.txt", "r") as dep_file:
-                lines = dep_file.readlines()  # Read the file line by line
+                lines = dep_file.readlines()  
         except FileNotFoundError:
             print("Department file not found.")
             return
